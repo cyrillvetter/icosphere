@@ -18,7 +18,7 @@ class Main {
 
     isFlat = true;
     #previousIsFlat = false;
-    
+
     subdivisions = 2;
     #previousSubdivisions = 0;
 
@@ -60,13 +60,13 @@ class Main {
 
     bindIcosphere() {
         let vertices, triangles, normals;
-        
+
         if (this.isFlat) {
             [vertices, triangles, normals] = this.#icosphere.getFlat();
         } else {
             [vertices, triangles, normals] = this.#icosphere.getSmooth();
         }
- 
+
         var vertexNormals = Main.flatInterleave(vertices, normals);
 
         const vertexBuffer = this.#gl.createBuffer();
@@ -98,7 +98,7 @@ class Main {
 
     generateIcosphere() {
         const subdivisionDiff = this.subdivisions - this.#previousSubdivisions
-        
+
         if (subdivisionDiff >= 1) {
             this.#icosphere.subdivideN(subdivisionDiff);
             this.bindIcosphere();

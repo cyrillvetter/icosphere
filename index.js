@@ -10,7 +10,7 @@ window.onload = async function()
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
     });
-    
+
     let gl = canvas.getContext("webgl2");
 
     const main = await createShader(gl, "./vertex-shader.glsl", "./fragment-shader.glsl")
@@ -20,12 +20,17 @@ window.onload = async function()
 }
 
 function setupControls(canvas, main) {
+    const toolWindow = document.getElementById("tool-window");
+    document.getElementById("window-toggle").onclick = () => {
+        toolWindow.toggleAttribute("closed");
+    };
+
     document.getElementById("flat").onclick = (() => main.shadeFlat());
     document.getElementById("smooth").onclick = (() => main.shadeSmooth());
 
     document.getElementById("increase-subdivisions").onclick = (() => main.changeSubdivisions(1));
     document.getElementById("decrease-subdivisions").onclick = (() => main.changeSubdivisions(-1));
-    
+
     window.onwheel = (event) => {
         main.scroll(event.deltaY);
     };
@@ -54,7 +59,7 @@ function setupControls(canvas, main) {
         startMouseY = event.clientY;
         isDragging = true;
     };
-    
+
     canvas.onmouseup = (event) => {
         canvas.style.cursor = "grab";
         isDragging = false;

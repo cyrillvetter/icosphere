@@ -1,6 +1,6 @@
 :root {
   --primary: rgb(54, 55, 207);
-  --primary-dark: rgba(54, 55, 207, 0.5);
+  --primary-dark: rgba(54, 55, 207, 0.25);
   --light: rgb(50, 50, 50);
   --lighter: rgb(100, 100, 100);
   --dark: rgb(17, 17, 17);
@@ -26,21 +26,55 @@ canvas {
   cursor: grab;
 }
 
-.tools-window {
+.tool-window {
   position: absolute;
   top: 0;
   left: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
+  width: 28ch;
   margin: 20px;
-  padding: 10px 10px 12px 10px;
   background-color: var(--dark);
-  border: 2px solid var(--light);
   color: white;
 }
 
-.tools-window > fieldset {
+.tool-header {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 5px 10px;
+  background-color: var(--primary-dark);
+  border: 2px solid var(--light);
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
+.tool-window[closed] > .tool-header > span::before {
+  content: '\02C5';
+}
+
+.tool-window > .tool-header > span::before {
+  content: '\02C4';
+}
+
+.tool-fields {
+  padding: 10px 10px 12px 10px;
+  border: 2px solid var(--light);
+  border-top: none;
+}
+
+.tool-window > .tool-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.tool-window[closed] > .tool-fields {
+  display: none;
+}
+
+.tool-fields > fieldset {
   border: 2px solid var(--lighter);
   padding: 10px;
 }
@@ -49,11 +83,20 @@ fieldset input {
   margin: 0;
 }
 
+.subdivision-fields {
+  display: flex;
+  gap: 1ch;
+}
+
+.subdivision-fields > * {
+  height: 3ch;
+}
+
 .subdivision-info {
+  width: 100%;
+  pointer-events: none;
   background-color: var(--primary-dark);
   color: white;
-  height: 3ch;
-  width: 20ch;
   padding: 0;
   border: none;
   padding-left: 5px;

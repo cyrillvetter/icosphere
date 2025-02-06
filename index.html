@@ -8,7 +8,7 @@
 
         <link rel="icon" type="image/x-icon" href="./favicon.ico">
         <link rel="stylesheet" href="style.css">
-        
+
         <script src="./index.js"></script>
         <script src="./main.js"></script>
         <script src="./icosphere.js"></script>
@@ -18,40 +18,51 @@
     <body>
         <canvas id="myCanvas"></canvas>
 
-        <div class="tools-window">
-            <fieldset>
-                <legend>Subdivisions:</legend>
+        <div id="tool-window" class="tool-window">
+            <button id="window-toggle" class="tool-header">
                 <div>
-                    <input type="text" id="subdivisions" class="subdivision-info" disabled>
-                    <button id="decrease-subdivisions" class="subdivision-button">-</button>
-                    <button id="increase-subdivisions" class="subdivision-button">+</button>
+                    Icosphere
                 </div>
-            </fieldset>
-            
-            <fieldset>
-                <legend>Shading:</legend>
-                <div>
-                    <input type="radio" id="flat" name="shading" class="shading-toggle" checked>
-                    <label for="flat">Flat</label>
-                </div>
-                
-                <div>
-                    <input type="radio" id="smooth" name="shading" class="shading-toggle">
-                    <label for="smooth">Smooth</label>
-                </div>
-            </fieldset>
-            
-            <fieldset>
-                <legend>Info:</legend>
-                <div>
-                    <span>#</span>
-                    <span id="vertices-amount"></span>
-                </div>
-                <div>
-                    <span>#</span>
-                    <span id="triangles-amount"></span>
-                </div>
-            </fieldset>
+
+                <span></span>
+            </button>
+
+            <div class="tool-fields">
+                <fieldset>
+                    <legend>Subdivisions</legend>
+                    <div class="subdivision-fields">
+                        <input type="text" id="subdivisions" class="subdivision-info">
+                        <button id="decrease-subdivisions" class="subdivision-button">-</button>
+                        <button id="increase-subdivisions" class="subdivision-button">+</button>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Shading</legend>
+                    <div>
+                        <input type="radio" id="flat" name="shading" class="shading-toggle" checked>
+                        <label for="flat">Flat</label>
+                    </div>
+
+                    <div>
+                        <input type="radio" id="smooth" name="shading" class="shading-toggle">
+                        <label for="smooth">Smooth</label>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Info</legend>
+                    <div>
+                        <span>#</span>
+                        <span id="vertices-amount"></span>
+                    </div>
+                    <div>
+                        <span>#</span>
+                        <span id="triangles-amount"></span>
+                    </div>
+                </fieldset>
+            </div>
+
         </div>
     </body>
 </html>
