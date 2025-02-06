@@ -1,6 +1,6 @@
 :root {
   --primary: rgb(54, 55, 207);
-  --primary-dark: rgba(54, 55, 207, 0.25);
+  --primary-dark: rgb(27, 27, 65);
   --light: rgb(50, 50, 50);
   --lighter: rgb(100, 100, 100);
   --dark: rgb(17, 17, 17);
