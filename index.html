@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <title>Icosphere</title>
+
+        <link rel="icon" type="image/x-icon" href="./favicon.ico">
+        <link rel="stylesheet" href="style.css">
+        
+        <script src="./index.js"></script>
+        <script src="./main.js"></script>
+        <script src="./icosphere.js"></script>
+        <script src="./mat.js"></script>
+        <script src="./vector3.js"></script>
+    </head>
+    <body>
+        <canvas id="myCanvas"></canvas>
+
+        <div class="tools-window">
+            <fieldset>
+                <legend>Subdivisions:</legend>
+                <div>
+                    <input type="text" id="subdivisions" class="subdivision-info" disabled>
+                    <button id="decrease-subdivisions" class="subdivision-button">-</button>
+                    <button id="increase-subdivisions" class="subdivision-button">+</button>
+                </div>
+            </fieldset>
+            
+            <fieldset>
+                <legend>Shading:</legend>
+                <div>
+                    <input type="radio" id="flat" name="shading" class="shading-toggle" checked>
+                    <label for="flat">Flat</label>
+                </div>
+                
+                <div>
+                    <input type="radio" id="smooth" name="shading" class="shading-toggle">
+                    <label for="smooth">Smooth</label>
+                </div>
+            </fieldset>
+            
+            <fieldset>
+                <legend>Info:</legend>
+                <div>
+                    <span>#</span>
+                    <span id="vertices-amount"></span>
+                </div>
+                <div>
+                    <span>#</span>
+                    <span id="triangles-amount"></span>
+                </div>
+            </fieldset>
+        </div>
+    </body>
+</html>
