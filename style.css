@@ -51,11 +51,11 @@ canvas {
 }
 
 .tool-window[closed] > .tool-header > span::before {
-  content: '\02C5';
+  content: '+';
 }
 
 .tool-window > .tool-header > span::before {
-  content: '\02C4';
+  content: '-';
 }
 
 .tool-fields {
@@ -106,8 +106,7 @@ fieldset input {
   background-color: var(--primary);
   color: white;
   border: none;
-  width: 3ch;
-  height: 3ch;
+  width: 4ch;
 }
 
 .shading-toggle {
