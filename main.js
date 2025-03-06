@@ -51,7 +51,7 @@ class Main {
         Mat.set(projectionLoc, Mat.perspective(1.0, 60.0, 0.1, 100.0))
 
         const colorLoc = gl.getUniformLocation(sp, "uColor");
-        gl.uniform3fv(colorLoc, [0.211764706, 0.215686275, 0.811764706]);
+        gl.uniform3fv(colorLoc, [0.212, 0.216, 0.812]);
 
         gl.enable(gl.DEPTH_TEST);
         gl.enable(gl.CULL_FACE);
